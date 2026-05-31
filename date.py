@@ -131,11 +131,11 @@ if st.session_state.page == "question":
 
         if yes:
             st.session_state.page = "drink"
-            st.experimental_rerun()
+            st.rerun()
 
         if no:
             st.session_state.no_count += 1
-            st.experimental_rerun()
+            st.rerun()
 
 # -----------------------------
 # PAGE 2
@@ -163,13 +163,13 @@ elif st.session_state.page == "drink":
         if st.button("☕ hot chocolate", use_container_width=True):
             st.session_state.drink = "Hot Chocolate ☕"
             st.session_state.page = "day"
-            st.experimental_rerun()
+            st.rerun()
 
     with col2:
         if st.button("🍵 Tea & tiramisu", use_container_width=True):
             st.session_state.drink = "Tea 🍵 & Tiramisu 🍰"
             st.session_state.page = "day"
-            st.experimental_rerun()
+            st.rerun()
 
 # -----------------------------
 # PAGE 3
@@ -197,7 +197,7 @@ elif st.session_state.page == "day":
     if st.button("Next ➜", use_container_width=True):
         st.session_state.day = day
         st.session_state.page = "time"
-        st.experimental_rerun()
+        st.rerun()
 
 # -----------------------------
 # PAGE 4
@@ -230,7 +230,7 @@ elif st.session_state.page == "time":
     if st.button("Confirm ❤️", use_container_width=True):
         st.session_state.time = selected_time
         st.session_state.page = "summary"
-        st.experimental_rerun()
+        st.rerun()
 
 # -----------------------------
 # PAGE 5
@@ -282,4 +282,4 @@ elif st.session_state.page == "summary":
         st.session_state.drink = None
         st.session_state.day = None
         st.session_state.time = None
-        st.experimental_rerun()
+        st.rerun()
